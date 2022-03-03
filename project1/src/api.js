@@ -111,27 +111,26 @@ const routes = [
     callback: async (_, reqBody) => {
       if (!reqBody) {
         return {
-          statusCode: 404,
+          statusCode: 400,
           body: 'wrong post request',
         }
       }
       if (reqBody.title && reqBody.content) {
         const postId = `post-${posts.length + 1}`
-        posts.push(
-          /** @type {Post} */
-          {
-            id: postId,
-            title: reqBody.title,
-            content: reqBody.content,
-          }
-        )
+        /** @type {Post} */
+        const newPost = {
+          id: postId,
+          title: reqBody.title,
+          content: reqBody.content,
+        }
+        posts.push(newPost)
         return {
           statusCode: 200,
-          body: 'successfully posted',
+          body: { message: 'successfully posted', post: newPost },
         }
       }
       return {
-        statusCode: 404,
+        statusCode: 400,
         body: 'wrong post request',
       }
     },
