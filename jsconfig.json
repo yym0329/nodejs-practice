@@ -6,11 +6,6 @@
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": [
-    "packages/**/*",
-    "practices/**/*",
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["packages/**/*", "practices/**/*", "project1/**/*"],
+  "exclude": ["node_modules"]
 }
