@@ -6,7 +6,8 @@
     "node": "14.15.4"
   },
   "scripts": {
-    "lerna": "lerna"
+    "lerna": "lerna",
+    "build": "esbuild ./practices/ch4/main.js --bundle --outfile=./build/main.js --target=node12.22"
   },
   "devDependencies": {
     "eslint": "^7.29.0",
@@ -17,5 +18,8 @@
     "lerna": "^4.0.0",
     "prettier": "^2.3.2",
     "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.23"
   }
 }
